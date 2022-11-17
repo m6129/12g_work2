@@ -1,4 +1,4 @@
-!pip install transformers sentencepiece sacremoses
+pip install transformers sentencepiece sacremoses
 import torch
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 
