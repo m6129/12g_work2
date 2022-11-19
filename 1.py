@@ -1,4 +1,7 @@
 #!pip install transformers sentencepiece sacremoses
+import io
+import streamlit as st
+from PIL import Image
 import torch
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 
