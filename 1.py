@@ -5,9 +5,9 @@ from PIL import Image # библиотека для загрузки изобр�
 #from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 from transformers import pipeline
 
-image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+#image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
-#print("Эта модель развернута группой студентов УрФу")
+print("Эта модель развернута группой студентов УрФу")
 
 @st.cache(allow_output_mutation=True)
 def load_model():
