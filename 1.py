@@ -1,9 +1,11 @@
-import io
-import streamlit as st
-from PIL import Image
-import torch
+import io # обязательные библиотеки для stremlit
+import streamlit as st # # обязательные библиотеки для stremlit
+from PIL import Image # библиотека для загрузки изображений
+#import torch
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 from transformers import pipeline
+
+image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
 def load_image():
     uploaded_file = st.file_uploader(label='Выберите изображение для распознования') # загрузчик файлов
@@ -13,9 +15,6 @@ def load_image():
         return Image.open(io.BytesIO(image_data))# возвращаем это изображение
     else:
         return None
-image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+    
 st.title('Классификация изображений')
-img = load_image()
-
-# image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
-
+img = load_image() # вызываем функцию
