@@ -15,7 +15,7 @@ def load_image():
         return None
 
 st.title('Классификация изображений')
-img = load_image()
+img = load_image(image_to_text)
 
 
 
