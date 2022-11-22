@@ -7,7 +7,8 @@ from transformers import pipeline
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    return pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+    m = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+    return m
 
 
 def load_image():
