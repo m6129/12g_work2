@@ -18,4 +18,4 @@ def load_image():
     
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
-img(image_to_text)
+image_to_text(img)
