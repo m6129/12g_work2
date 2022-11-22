@@ -21,11 +21,10 @@ def load_image():
 st.write('**Успешно1:**')
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
-mod = load_model()
+#mod = load_model()
 st.write('**Успешно2:**')
 result = st.button('Распознать изображение')# вставляем кнопку
 st.write('**Успешно:**')
 if result: #после нажатия на которую будет запущен алгоритм...
     st.write('**Результаты распознавания:**')
-    m(img)
-    mod(img)
+    image_to_text(img)
