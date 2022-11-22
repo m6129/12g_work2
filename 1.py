@@ -6,7 +6,7 @@ from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTok
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    #return EfficientNetB0(weights='imagenet')
+    return model
 
 model = VisionEncoderDecoderModel.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
 feature_extractor = ViTFeatureExtractor.from_pretrained("nlpconnect/vit-gpt2-image-captioning")
@@ -40,3 +40,12 @@ def predict_step(image_paths):
 
 
 predict_step(['doctor.e16ba4e4.jpg']) # ['a woman in a hospital bed with a woman in a hospital bed']
+# добавил свой кусок
+st.title('Классификации изображений в облаке Streamlit')
+img = load_image()
+result = st.button('Распознать изображение')
+if result:
+    x = preprocess_image(img)
+    preds = model.predict(x)
+    st.write('**Результаты распознавания:**')
+    print_predictions(preds)
