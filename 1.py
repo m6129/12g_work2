@@ -26,8 +26,6 @@ result = st.button('Распознать изображение')# вставл�
 model = load_model()
 
 if result: #после нажатия на которую будет запущен алгоритм...
-    x = img
-    preds = model(x)
+    preds = model(img)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
-      #preds = model.predict(x)
