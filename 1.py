@@ -25,7 +25,7 @@ result = st.button('Распознать изображение')# вставл�
 mod = load_model()
 
 def print_predictions(preds):
-    classes = decode_predictions(preds, top=3)[0]
+    classes = decode_predictions(preds, top=1)[0]
     for cl in classes:
         st.write(cl[1], cl[2])
 
