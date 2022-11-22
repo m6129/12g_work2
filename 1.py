@@ -9,7 +9,7 @@ from transformers import pipeline
 def load_model():
     m = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
     return m
-
+m = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
 def load_image():
     uploaded_file = st.file_uploader(label='Загрузите пожалуйста изображение') # загрузчик файлов
