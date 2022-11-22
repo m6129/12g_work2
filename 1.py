@@ -5,9 +5,18 @@ import torch
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 from transformers import pipeline
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-    return model
+def load_image():
+    uploaded_file = st.file_uploader(label='Выберите изображение для распознования') # загрузчик файлов
+    if uploaded_file is not None: # если пользователь загрузил файл
+        image_data = uploaded_file.getvalue()
+        st.image(image_data)
+        return Image.open(io.BytesIO(image_data))# возвращаем это изображение
+    else:
+        return None
+
+st.title('Классификация изображений')
+img = load_image()
+
 
 
 
