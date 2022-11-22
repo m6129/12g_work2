@@ -8,7 +8,7 @@ from transformers import pipeline
 image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 @st.cache(allow_output_mutation=True)
 def load_model():
-    return image_to_text()
+    return image_to_text
 
 def load_image():
     uploaded_file = st.file_uploader(label='Выберите изображение для распознования') # загрузчик файлов
@@ -25,6 +25,7 @@ result = st.button('Распознать изображение')# вставл�
 
 if result: #после нажатия на которую будет запущен алгоритм...
     x = preprocess_image(img)
-    preds = model.predict(x)
+    preds = model(x)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
+      #preds = model.predict(x)
