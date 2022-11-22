@@ -13,13 +13,9 @@ def load_image():
         return Image.open(io.BytesIO(image_data))# возвращаем это изображение
     else:
         return None
-
-st.title('Классификация изображений')
-img = load_image(image_to_text)
-
-
-
-
 image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+st.title('Классификация изображений')
+img = load_image()
 
-image_to_text("https://ankur3107.github.io/assets/images/image-captioning-example.png")
+# image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+
