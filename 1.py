@@ -7,9 +7,8 @@ from transformers import pipeline
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    m = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
-    return m
-m = (pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning"))
+    return image-to-text
+
 
 def load_image():
     uploaded_file = st.file_uploader(label='Загрузите пожалуйста изображение') # загрузчик файлов
@@ -22,7 +21,7 @@ def load_image():
 st.write('**Успешно1:**')
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
-#mod = load_model()
+mod = load_model()
 st.write('**Успешно2:**')
 result = st.button('Распознать изображение')# вставляем кнопку
 st.write('**Успешно:**')
