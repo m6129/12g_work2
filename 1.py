@@ -12,7 +12,7 @@ def load_model():
 image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
 def load_image():
-    uploaded_file = st.file_uploader(label='Выберите изображение для распознования') # загрузчик файлов
+    uploaded_file = st.file_uploader(label='Загрузите пожалуйста изображение') # загрузчик файлов
     if uploaded_file is not None: # если пользователь загрузил файл
         image_data = uploaded_file.getvalue() # то мы его читаем
         st.image(image_data) # преобразуем с помощью средств stremlit
