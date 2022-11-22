@@ -30,5 +30,6 @@ def print_predictions(preds):
         st.write(cl[1], cl[2])
 
 if result: #после нажатия на которую будет запущен алгоритм...
+    preds = mod(img)
     st.write('**Результаты распознавания:**')
-    print_predictions(mod(img))
+    print_predictions(preds)
