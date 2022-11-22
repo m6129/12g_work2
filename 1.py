@@ -5,11 +5,6 @@ from PIL import Image # библиотека для загрузки изобр�
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 from transformers import pipeline
 
-#image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
-#@st.cache(allow_output_mutation=True)
-#def load_model():
-#    return model
-
 
 def load_image():
     uploaded_file = st.file_uploader(label='Загрузите пожалуйста изображение') # загрузчик файлов
@@ -24,9 +19,14 @@ st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 result = st.button('Распознать изображение')# вставляем кнопку
 
+image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+#@st.cache(allow_output_mutation=True)
+#def load_model():
+#    return model
+
 if result: #после нажатия на которую будет запущен алгоритм...
     x = preprocess_image(img)
-    preds = model.predict(x)
+    preds = image_to_text(x)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
       #preds = model.predict(x)
