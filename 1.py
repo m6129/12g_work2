@@ -18,7 +18,7 @@ def load_image():
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 
-result = st.button('Распознать изображение')
+#result = st.button('Распознать изображение')
 
 image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 image_to_text(img)
