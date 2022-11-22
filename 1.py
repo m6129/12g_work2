@@ -22,6 +22,7 @@ def load_image():
 st.write('**Успешно1:**')
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
+st.write('**Успешно2:**')
 result = st.button('Распознать изображение')# вставляем кнопку
 mod = load_model()
 st.write('**Успешно:**')
