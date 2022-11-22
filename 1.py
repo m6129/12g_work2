@@ -23,9 +23,9 @@ st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 result = st.button('Распознать изображение')# вставляем кнопку
 
-model = load_model()
+mod = load_model()
 
 if result: #после нажатия на которую будет запущен алгоритм...
-    preds = model(img)
+    preds = mod(img)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
