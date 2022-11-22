@@ -27,7 +27,7 @@ model = load_model()
 
 if result: #после нажатия на которую будет запущен алгоритм...
     x = preprocess_image(img)
-    preds = model(x)
+    preds = model.predict(x)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
       #preds = model.predict(x)
