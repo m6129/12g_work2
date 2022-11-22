@@ -9,9 +9,9 @@ from transformers import pipeline
 
 print("Эта модель развернута группой студентов УрФу")
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-    return image_to_text
+#@st.cache(allow_output_mutation=True)
+#def load_model():
+    #return image_to_text
 
 def load_image():
     uploaded_file = st.file_uploader(label='Выберите изображение для распознования') # загрузчик файлов
