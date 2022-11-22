@@ -24,6 +24,11 @@ img = load_image() # вызываем функцию
 result = st.button('Распознать изображение')# вставляем кнопку
 mod = load_model()
 
+def print_predictions(preds):
+    classes = decode_predictions(preds, top=3)[0]
+    for cl in classes:
+        st.write(cl[1], cl[2])
+
 if result: #после нажатия на которую будет запущен алгоритм...
     st.write('**Результаты распознавания:**')
     print_predictions(mod(img))
