@@ -25,9 +25,9 @@ def load_image():
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 
-result = st.button('Распознать изображение')
-if result:
-    x = preprocess_image(img)
-    preds = model.predict(x)
-    st.write('**Результаты распознавания:**')
-    print_predictions(preds)
+#result = st.button('Распознать изображение')
+#if result:
+#    x = preprocess_image(img)
+#    preds = model.predict(x)
+#    st.write('**Результаты распознавания:**')
+#    print_predictions(preds)
