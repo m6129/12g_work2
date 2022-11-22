@@ -27,4 +27,4 @@ st.write('**Успешно3:**')
 if result: #после нажатия на которую будет запущен алгоритм...
     st.write('**Результаты распознавания:**')
     #image_to_text(img)
-    st.title('Классификация изображений')
+    st.title('Мне кажется модель https://huggingface.co/nlpconnect/vit-gpt2-image-captioning не работает со стремлит')
