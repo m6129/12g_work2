@@ -19,14 +19,15 @@ st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 result = st.button('Распознать изображение')# вставляем кнопку
 
-image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
-#@st.cache(allow_output_mutation=True)
-#def load_model():
-#    return model
+mod = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
+@st.cache(allow_output_mutation=True)
+def load_model():
+    return mod
+model = load_model()
 
 if result: #после нажатия на которую будет запущен алгоритм...
     x = preprocess_image(img)
-    preds = image_to_text(x)
+    preds = model(x)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
       #preds = model.predict(x)
