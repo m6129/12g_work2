@@ -5,10 +5,9 @@ from PIL import Image # библиотека для загрузки изобр�
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 from transformers import pipeline
 
-mod = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 @st.cache(allow_output_mutation=True)
 def load_model():
-    return mod
+    return pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-captioning")
 
 
 def load_image():
@@ -27,7 +26,7 @@ result = st.button('Распознать изображение')# вставл�
 model = load_model()
 
 if result: #после нажатия на которую будет запущен алгоритм...
-    x = preprocess_image(img)
+    x = img
     preds = model.predict(x)
     st.write('**Результаты распознавания:**')
     print_predictions(preds)
