@@ -5,9 +5,9 @@ from PIL import Image # библиотека для загрузки изобр�
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor, AutoTokenizer
 from transformers import pipeline
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-    return image-to-text
+#@st.cache(allow_output_mutation=True)
+#def load_model():
+    #return image-to-text
 
 
 def load_image():
@@ -18,13 +18,12 @@ def load_image():
         return Image.open(io.BytesIO(image_data))# возвращаем это изображение
     else:
         return None
-st.write('**Успешно1:**')
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 #mod = load_model()
-st.write('**Успешно2:**')
+
 result = st.button('Распознать изображение')# вставляем кнопку
-st.write('**Успешно:**')
+st.write('**Успешно3:**')
 if result: #после нажатия на которую будет запущен алгоритм...
     st.write('**Результаты распознавания:**')
     image_to_text(img)
