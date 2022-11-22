@@ -19,7 +19,7 @@ def load_image():
         return Image.open(io.BytesIO(image_data))# возвращаем это изображение
     else:
         return None
-    
+st.write('**Успешно1:**')
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 result = st.button('Распознать изображение')# вставляем кнопку
