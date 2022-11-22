@@ -9,6 +9,7 @@ image_to_text = pipeline("image-to-text", model="nlpconnect/vit-gpt2-image-capti
 
 st.title('Добро пожаловать')
 print("Эта модель развернута группой студентов УрФу")
+
 @st.cache(allow_output_mutation=True)
 def load_model():
     return image_to_text
@@ -25,4 +26,9 @@ def load_image():
 st.title('Классификация изображений')
 img = load_image() # вызываем функцию
 
-#result = st.button('Распознать изображение')
+result = st.button('Распознать изображение')
+if result:
+    x = preprocess_image(img)
+    preds = model.predict(x)
+    st.write('**Результаты распознавания:**')
+    print_predictions(preds)
